@@ -1,12 +1,21 @@
-int [] massiv = new int[10];
+using Npgsql.EntityFrameworkCore.PostgreSQL.Query.Expressions.Internal;
 
+Random random = new Random();
+int[] array = new int[10];
+for (int i = 0; i < array.Length; i++)
+{
+    int randomNumber = random.Next(-7, 7);
+    array[i] = randomNumber;
+    Console.Write($"{randomNumber}, ");
+}
+
+Console.WriteLine();
+Console.WriteLine("Enter number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int number_index = -1;
 for (int i = 0; i < 10; i++)
 {
-    Console.WriteLine($"Enter {i} number of array: ");
-    int n = Convert.ToInt32(Console.ReadLine());
-    if (n >= -7 && n <= 7)
-        massiv[i] = n;
-        Console.WriteLine(massiv[i]);
-    Console.WriteLine($"Last element of massiv: { massiv[9]} ");
-
+    if (number == array[i])
+        number_index = i;
+    Console.WriteLine($"index = {number_index} ");
 }
