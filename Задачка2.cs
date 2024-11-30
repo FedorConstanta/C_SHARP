@@ -1,5 +1,3 @@
-using Npgsql.EntityFrameworkCore.PostgreSQL.Query.Expressions.Internal;
-
 Random random = new Random();
 int[] array = new int[10];
 for (int i = 0; i < array.Length; i++)
